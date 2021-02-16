@@ -27,19 +27,15 @@ namespace ProjectLab_KonradBaran
             ShopMenegmentDBEntities _db = new ShopMenegmentDBEntities();
 
             var orders = from o in _db.Orders
-                         select new
-                         {
-                             Name = o.CustomerName,
-                             Surname = o.CustomerSurname,
-                             Item = o.Product
-                         };
-            
+                         select o;
+                        
+
 
             foreach (var item in orders)
             {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Surname);
-                Console.WriteLine(item.Item);
+                Console.WriteLine(item.CustomerName);
+                Console.WriteLine(item.CustomerSurname);
+                Console.WriteLine(item.Product);
             }
 
             this.gridOfOrders.ItemsSource = orders.ToList();
