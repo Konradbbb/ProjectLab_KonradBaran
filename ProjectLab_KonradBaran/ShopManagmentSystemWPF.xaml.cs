@@ -68,9 +68,24 @@ namespace ProjectLab_KonradBaran
             this.gridOfOrders.ItemsSource = _db.Orders.ToList();
         }
 
+        private int updateOrderId = 0;
         private void gridOfOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if(this.gridOfOrders.SelectedIndex >= 0)
+            {
+                if (this.gridOfOrders.SelectedItems.Count >= 0)
+                {
+                    if (this.gridOfOrders.SelectedItems[0].GetType() == typeof(Order))
+                    {
+                        Order newOrder = (Order)this.gridOfOrders.SelectedItems[0];
+                        this.txtNameUpdate.Text = newOrder.CustomerName;
+                        this.txtSurnameUpdate.Text = newOrder.CustomerSurname;
+                        this.txtProductUpdate.Text = newOrder.Product;
+
+                        this.updateOrderId = newOrder.Id;
+                    }
+                }
+            }
         }
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
@@ -78,14 +93,19 @@ namespace ProjectLab_KonradBaran
             ShopMenegmentDBEntities _db = new ShopMenegmentDBEntities();
 
             var r = from o in _db.Orders
-                    where o.Id == 1
+                    where o.Id == this.updateOrderId
                     select o;
 
-            foreach (var item in r)
-            {
-                MessageBox.Show(item.CustomerName);
+            Order order = r.SingleOrDefault();
 
+           if(order != null)
+            {
+                order.CustomerName = this.txtNameUpdate.Text;
+                order.CustomerSurname = this.txtSurnameUpdate.Text;
+                order.Product = this.txtProductUpdate.Text;
             }
+
+            _db.SaveChanges();
         }
 
 
