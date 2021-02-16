@@ -67,5 +67,27 @@ namespace ProjectLab_KonradBaran
 
             this.gridOfOrders.ItemsSource = _db.Orders.ToList();
         }
+
+        private void gridOfOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void updateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShopMenegmentDBEntities _db = new ShopMenegmentDBEntities();
+
+            var r = from o in _db.Orders
+                    where o.Id == 1
+                    select o;
+
+            foreach (var item in r)
+            {
+                MessageBox.Show(item.CustomerName);
+
+            }
+        }
+
+
     }
 }

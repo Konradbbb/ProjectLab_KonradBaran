@@ -6,17 +6,22 @@
         xmlns:local="clr-namespace:ProjectLab_KonradBaran"
         mc:Ignorable="d"
         Title="ShopManagmentSystemWPF" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="gridOfOrders" HorizontalAlignment="Left" Height="225" Margin="408,178,0,0" VerticalAlignment="Top" Width="370"/>
-        <Label Content="Product:" HorizontalAlignment="Left" Margin="510,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="510,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
-        <Label Content="Surname:" HorizontalAlignment="Left" Margin="510,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="17" Margin="583,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
-        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="17" Margin="583,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
-        <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="17" Margin="583,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
+    <Grid Margin="-1,0,2.6,8">
+        <DataGrid x:Name="gridOfOrders" HorizontalAlignment="Left" Height="224" Margin="229,21,0,0" VerticalAlignment="Top" Width="333" SelectionChanged="gridOfOrders_SelectionChanged"/>
+        <Label Content="Product:" HorizontalAlignment="Left" Margin="575,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="575,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
+        <Label Content="Surname:" HorizontalAlignment="Left" Margin="575,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="17" Margin="575,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="17" Margin="575,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
+        <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="17" Margin="575,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
 
-        <Button x:Name="insertOrdBtn" Content="Insert order" HorizontalAlignment="Left" Margin="684,111,0,0" VerticalAlignment="Top" Width="75" Click="insertOrdBtn_Click"/>
-        <Button x:Name="reloadDataBtn" Content="Reload Database" HorizontalAlignment="Left" Margin="684,143,0,0" VerticalAlignment="Top" Width="75" Click="reloadDataBtn_Click"/>
+        <Button x:Name="insertOrdBtn" Content="Insert order" HorizontalAlignment="Left" Margin="635,164,0,0" VerticalAlignment="Top" Width="74" Click="insertOrdBtn_Click" RenderTransformOrigin="0.5,0.5" Height="19"/>
+
+        <Button x:Name="reloadDataBtn" Content="Reload" HorizontalAlignment="Left" Margin="360,248,0,0" VerticalAlignment="Top" Width="75" Click="reloadDataBtn_Click" RenderTransformOrigin="0.5,0.5"/>
+        
+        <Button x:Name="updateBtn" Content="Update Order" HorizontalAlignment="Left" Margin="123,150,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
+
+
 
 
 
