@@ -85,6 +85,9 @@
     <Compile Include="Customer.cs">
       <DependentUpon>ShopManagmentSystemModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="GreetingsWindow.xaml.cs">
+      <DependentUpon>GreetingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>ShopManagmentSystemModels.tt</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
     <Compile Include="Warehouse.cs">
       <DependentUpon>ShopManagmentSystemModels.tt</DependentUpon>
     </Compile>
+    <Page Include="GreetingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
