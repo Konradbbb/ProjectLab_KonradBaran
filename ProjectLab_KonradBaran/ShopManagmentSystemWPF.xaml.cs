@@ -22,6 +22,22 @@ namespace ProjectLab_KonradBaran
         public ShopManagmentSystemWPF()
         {
             InitializeComponent();
+
+            ShopMenegmentDBEntities _db = new ShopMenegmentDBEntities();
+
+            var orders = from o in _db.Orders
+                         select o;
+
+            foreach (var item in orders)
+            {
+                Console.WriteLine(item.CustomerName);
+                Console.WriteLine(item.CustomerSurname);
+                Console.WriteLine(item.Product);
+            }
+
+            this.gridOfOrders.ItemsSource = orders.ToList();
+
+
         }
     }
 }
