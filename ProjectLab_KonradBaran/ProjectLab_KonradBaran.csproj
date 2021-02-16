@@ -175,10 +175,10 @@
       <LastGenOutput>ShopManagmentSystemModels.cs</LastGenOutput>
     </Content>
     <Content Include="ShopMenegmentDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ShopMenegmentDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>ShopMenegmentDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
