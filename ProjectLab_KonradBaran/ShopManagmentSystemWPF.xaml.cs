@@ -19,6 +19,7 @@ namespace ProjectLab_KonradBaran
     /// </summary>
     public partial class ShopManagmentSystemWPF : Window
     {
+        private int updateOrderId = 0;
         public ShopManagmentSystemWPF()
         {
             InitializeComponent();
@@ -42,8 +43,6 @@ namespace ProjectLab_KonradBaran
             }
 
             this.gridOfOrders.ItemsSource = orders.ToList();
-
-
         }
 
         private void insertOrdBtn_Click(object sender, RoutedEventArgs e)
@@ -68,7 +67,7 @@ namespace ProjectLab_KonradBaran
             this.gridOfOrders.ItemsSource = _db.Orders.ToList();
         }
 
-        private int updateOrderId = 0;
+        
         private void gridOfOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(this.gridOfOrders.SelectedIndex >= 0)
@@ -103,11 +102,40 @@ namespace ProjectLab_KonradBaran
                 order.CustomerName = this.txtNameUpdate.Text;
                 order.CustomerSurname = this.txtSurnameUpdate.Text;
                 order.Product = this.txtProductUpdate.Text;
-            }
 
+                
+            }
             _db.SaveChanges();
+
         }
 
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
 
+            MessageBoxResult msgBoxResult = MessageBox.Show("Do you want to delete order?", 
+                "Order has been deleted", 
+                MessageBoxButton.YesNo, 
+                MessageBoxImage.Warning, 
+                MessageBoxResult.No);
+
+            if (msgBoxResult == MessageBoxResult.Yes)
+            {
+
+                ShopMenegmentDBEntities _db = new ShopMenegmentDBEntities();
+
+                var r = from o in _db.Orders
+                        where o.Id == this.updateOrderId
+                        select o;
+
+                Order order = r.SingleOrDefault();
+
+                if (order != null)
+                {
+                    _db.Orders.Remove(order);
+                    _db.SaveChanges();
+                }
+            }
+            
+        }
     }
 }

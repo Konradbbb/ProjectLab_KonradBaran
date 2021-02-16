@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectLab_KonradBaran"
         mc:Ignorable="d"
-        Title="ShopManagmentSystemWPF" Height="450" Width="800">
+        Title="ShopManagmentSystemWPF" Height="286.267" Width="800">
     <Grid Margin="-1,0,2.6,8">
         <DataGrid x:Name="gridOfOrders" HorizontalAlignment="Left" Height="181" Margin="229,21,0,0" VerticalAlignment="Top" Width="333" SelectionChanged="gridOfOrders_SelectionChanged"/>
         <Label Content="Product:" HorizontalAlignment="Left" Margin="575,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.328" Height="23"/>
@@ -16,7 +16,7 @@
         <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="17" Margin="575,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
 
         <Button x:Name="insertOrdBtn" Content="Insert order" HorizontalAlignment="Left" Margin="635,164,0,0" VerticalAlignment="Top" Width="74" Click="insertOrdBtn_Click" RenderTransformOrigin="0.5,0.5" Height="19"/>
-        <Button x:Name="reloadDataBtn" Content="Reload" HorizontalAlignment="Left" Margin="359,207,0,0" VerticalAlignment="Top" Width="75" Click="reloadDataBtn_Click" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="reloadDataBtn" Content="Reload" HorizontalAlignment="Left" Margin="294,207,0,0" VerticalAlignment="Top" Width="75" Click="reloadDataBtn_Click" RenderTransformOrigin="0.5,0.5"/>
 
         <Button x:Name="updateBtn" Content="Update Order" HorizontalAlignment="Left" Margin="75,168,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
         
@@ -26,6 +26,8 @@
         <TextBox x:Name="txtNameUpdate" HorizontalAlignment="Left" Height="17" Margin="17,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
         <TextBox x:Name="txtSurnameUpdate" HorizontalAlignment="Left" Height="17" Margin="17,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
         <TextBox x:Name="txtProductUpdate" HorizontalAlignment="Left" Height="17" Margin="17,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195"/>
+        
+        <Button x:Name="deleteBtn" Content="Delete Order" HorizontalAlignment="Left" Margin="439,207,0,0" VerticalAlignment="Top" Width="75" Click="deleteBtn_Click"/>
 
 
 
